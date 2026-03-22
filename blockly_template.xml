@@ -1,35 +1,18 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <!-- Custom Blocks Definition for Robot Control -->
-  <block type="robot_move" id="move1">
-    <field name="DIRECTION">forward</field>
-    <value name="STEPS">
-      <shadow type="math_number">
-        <field name="NUM">10</field>
-      </shadow>
+  <block type="controls_if" x="20" y="20">
+    <value name="IF0">
+      <block type="logic_boolean">
+        <field name="BOOL">TRUE</field>
+      </block>
     </value>
-  </block>
-  <block type="robot_turn" id="turn1">
-    <field name="ANGLE">90</field>
-  </block>
-  <block type="gripper_open" id="gripper1"/>
-  <block type="gripper_close" id="gripper2"/>
-
-  <!-- Chess Moves -->
-  <block type="chess_move" id="move2">
-    <field name="PIECE">knight</field>
-    <field name="TO">e5</field>
-  </block>
-
-  <!-- Safety Calibration -->
-  <block type="safety_calibrate" id="calibrate1"/>
-
-  <!-- Captured Pieces Management -->
-  <block type="manage_captured" id="capture1">
-    <field name="ACTION">remove</field>
-    <value name="PIECE">
-      <shadow type="chess_piece">
-        <field name="TYPE">rook</field>
-      </shadow>
-    </value>
+    <statement name="DO0">
+      <block type="text_print">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">Hello, Chess Robot!</field>
+          </block>
+        </value>
+      </block>
+    </statement>
   </block>
 </xml>
